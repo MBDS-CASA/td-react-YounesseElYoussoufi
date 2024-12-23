@@ -42,11 +42,11 @@ function MainContent() {
 
 
 function Footer() {
-  
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="footer">
-      <p>©  - Younesse El Youssoufi, Tous droits réservés.</p>
+      <p>© {currentYear} - Younesse El Youssoufi, Tous droits réservés.</p>
     </footer>
   );
 }
