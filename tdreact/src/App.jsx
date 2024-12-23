@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-
+import data from './data.json'; // Importer les données JSON
 
 function Header({ name }) {
   return (
@@ -11,7 +11,6 @@ function Header({ name }) {
     </header>
   );
 }
-
 
 function MainContent() {
   const getCurrentDateTime = () => {
@@ -40,7 +39,6 @@ function MainContent() {
   );
 }
 
-
 function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -51,12 +49,42 @@ function Footer() {
   );
 }
 
+function RandomItem() {
+ 
+  const getRandomItem = (data) => {
+    const randomIndex = Math.floor(Math.random() * data.length);
+    return data[randomIndex];
+  };
+
+  const [item, setItem] = useState(getRandomItem(data));
+
+  const changeItem = () => {
+    setItem(getRandomItem(data));
+  };
+
+  return (
+    <div className="card-container">
+      <div className="card">
+        <div className="card-body">
+          <h5 className="card-title">{item.course}</h5>
+          <p className="card-text">
+            {item.student.firstname} {item.student.lastname} - {item.grade}%
+          </p>
+        </div>
+      </div>
+      <button className="btn-random" onClick={changeItem}>
+        Afficher un nouvel élément
+      </button>
+    </div>
+  );
+}
 
 function App() {
   return (
     <>
       <Header name="React" />
       <MainContent />
+      <RandomItem /> {/* Afficher un élément aléatoire */}
       <Footer />
     </>
   );
