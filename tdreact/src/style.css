@@ -1,0 +1,176 @@
+/* Header */
+.header {
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 10;
+  }
+  
+  .header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .header-logo {
+    height: 48px;
+    width: auto;
+  }
+  
+  /* Menu Button */
+  .menu-button {
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .menu-button:hover {
+    background-color: rgba(0,0,0,0.05);
+  }
+  
+  /* Drawer */
+  .drawer-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0,0,0,0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+    z-index: 100;
+  }
+  
+  .drawer-overlay.open {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: var(--drawer-width);
+    background: white;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 101;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+  }
+  
+  .drawer.open {
+    transform: translateX(0);
+  }
+  
+  .drawer-header {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .drawer-close {
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .drawer-close:hover {
+    background-color: rgba(0,0,0,0.05);
+  }
+  
+  .drawer-menu {
+    padding: 1rem;
+  }
+  
+  .drawer-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .drawer-menu li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .drawer-menu button {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
+  
+  .drawer-menu button:hover {
+    background-color: rgba(0,0,0,0.05);
+  }
+  
+  /* Main Content */
+  .main-content {
+    flex: 1;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  .time-display {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+  }
+  
+  /* Random Item Card */
+  .card-container {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .card-text {
+    color: #666;
+    margin-bottom: 1rem;
+  }
+  
+  .btn-random {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
+  
+  .btn-random:hover {
+    opacity: 0.9;
+  }
+  
+  /* Footer */
+  .footer {
+    background: white;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+    margin-top: auto;
+  }

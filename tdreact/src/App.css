@@ -1,42 +1,273 @@
-#root {
-  max-width: 1280px;
+.app {
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+
+.header {
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 1rem;
+  position: relative;
+  z-index: 10;
+}
+
+.header-content {
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-logo {
+  height: 48px;
+  width: auto;
+}
+
+.menu-button {
+  padding: 0.5rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.menu-button:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+  z-index: 998;
+}
+
+.drawer-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 256px;
+  background: white;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 999;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+}
+
+.drawer.open {
+  transform: translateX(0);
+}
+
+.drawer-header {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.drawer-close {
+  padding: 0.5rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.drawer-close:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+.drawer-menu ul {
+  list-style: none;
+  padding: 1rem;
+  margin: 0;
+}
+
+.menu-item {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: 0.2s ease;
+}
+
+.menu-item:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+.main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.time-display {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+.card-container {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.btn-random {
+  background-color: #3B82F6;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.btn-random:hover {
+  background-color: #2563EB;
+}
+
+.footer {
+  background: white;
+  padding: 1rem;
   text-align: center;
+  box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+  margin-top: 2rem;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+:root {
+  --primary-blue: #1E40AF;
+  --light-blue: #3B82F6;
+  --hover-blue: #1E3A8A;
+  --bg-blue: #EFF6FF;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app {
+  min-height: 100vh;
+  background: var(--bg-blue);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.header {
+  background: var(--primary-blue);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  padding: 1rem;
+  position: relative;
+  z-index: 10;
+  color: white;
 }
 
-.card {
-  padding: 2em;
+.header h1, .header h2 {
+  color: white;
 }
 
-.read-the-docs {
-  color: #888;
+.menu-button {
+  padding: 0.5rem;
+  border: none;
+  background: rgba(255,255,255,0.1);
+  cursor: pointer;
+  border-radius: 4px;
+  color: white;
 }
+
+.menu-button:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.drawer {
+  background: white;
+  border-right: 3px solid var(--light-blue);
+}
+
+.drawer-header {
+  background: var(--primary-blue);
+  color: white;
+  padding: 1rem;
+}
+
+.drawer-close {
+  color: white;
+  background: rgba(255,255,255,0.1);
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.drawer-close:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.menu-item {
+  color: var(--primary-blue);
+  transition: all 0.2s ease;
+}
+
+.menu-item:hover {
+  background: var(--bg-blue);
+  color: var(--hover-blue);
+}
+
+.time-display {
+  background: white;
+  border-left: 4px solid var(--light-blue);
+}
+
+.card-container {
+  background: white;
+  border-left: 4px solid var(--light-blue);
+}
+
+.card-title {
+  color: var(--primary-blue);
+}
+
+.btn-random {
+  background-color: var(--primary-blue);
+  color: white;
+}
+
+.btn-random:hover {
+  background-color: var(--hover-blue);
+}
+
+.footer {
+  background: var(--primary-blue);
+  color: white;
+}
+
+/* Keep all other existing styles */
+/* ... rest of your existing CSS ... */
